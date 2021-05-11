@@ -224,7 +224,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-05-11 17:36:16 / Modified: 18:10:03" itemprop="dateCreated datePublished" datetime="2021-05-11T17:36:16+08:00">2021-05-11</time>
+              <time title="Created: 2021-05-11 17:36:16 / Modified: 18:16:25" itemprop="dateCreated datePublished" datetime="2021-05-11T17:36:16+08:00">2021-05-11</time>
             </span>
 
           
@@ -236,7 +236,273 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>但今年开始了</p>
+          <h1 id="Linux下的常用操作指令"><a href="#Linux下的常用操作指令" class="headerlink" title="Linux下的常用操作指令"></a>Linux下的常用操作指令</h1><h2 id="3-1-vi和vim的基本介绍"><a href="#3-1-vi和vim的基本介绍" class="headerlink" title="3.1 vi和vim的基本介绍"></a>3.1 vi和vim的基本介绍</h2><p>​         vi是Linux系统内建的文本编辑器，类似于Windows下的文本，vim可以看做是vi的增强版本，可以进行编程语言的语法着色，方便程序设计</p>
+<h2 id="3-2-vi的三种模式"><a href="#3-2-vi的三种模式" class="headerlink" title="3.2 vi的三种模式"></a>3.2 vi的三种模式</h2><ol>
+<li><p><strong>一般模式</strong></p>
+<p>通过 vi 打开一个档案就直接进入一般模式了(这是默认的模式)。在这个模式中，可以使用【上下左右】光标按键来移动光标，以使用【删除字符】或【删除整行】来处理档案内容。也可以使用【复制，粘贴】来处理文件数据。不知道哪个模式可按下【ESC】键会进入一般模式。</p>
+</li>
+<li><p><strong>插入模式（编辑模式）</strong></p>
+<p>在一般模式下按下i, l, o, O, a, A, r, R 等任何一个字母按键后，会进入编辑模式，一般来说按 i 键即可。</p>
+</li>
+<li><p><strong>命令行模式</strong></p>
+<p>在这个模式中，可以输入相关指令，完成读取，存盘，替换，离开vi，显示行号等功能。在一般模式下按下【SHIFT】键 <strong>+</strong> 冒号键【:】可进入命令行模式。(如不按shift键则会默认是分号【;】键)。在该模式下输入【q】会退出 vi 编辑器，输入【wq】会将编辑的文本保存后退出，输入【q！】表示强制退出。</p>
+</li>
+</ol>
+<h2 id="3-3-一些常用的操作指令-vi和Linux"><a href="#3-3-一些常用的操作指令-vi和Linux" class="headerlink" title="3.3 一些常用的操作指令(vi和Linux)"></a>3.3 一些常用的操作指令(vi和Linux)</h2><h3 id="3-3-1-在-vi-模式外的界面，即Linux操作系统"><a href="#3-3-1-在-vi-模式外的界面，即Linux操作系统" class="headerlink" title="3.3.1 在 vi 模式外的界面，即Linux操作系统"></a>3.3.1 在 vi 模式外的界面，即Linux操作系统</h3><ul>
+<li><p>输入【clear】表示清屏</p>
+</li>
+<li><p>输入【vi】表示进入 vi 模式</p>
+</li>
+<li><p>输入【vi  test.txt】表示进入vi模式并创建一个叫做test的txt文本。</p>
+</li>
+<li><p>输入【cat  test.txt】表示查看test.txt的内容</p>
+</li>
+<li><p>输入【vi  /etc/profile】表示进入vi模式编辑/etc/profile文件</p>
+</li>
+</ul>
+<h3 id="3-3-2-命令行模式下"><a href="#3-3-2-命令行模式下" class="headerlink" title="3.3.2 命令行模式下"></a>3.3.2 命令行模式下</h3><ul>
+<li><p>输入【set nu】显示行号</p>
+</li>
+<li><p>输入【set nonu】表示不显示行号</p>
+</li>
+<li><p>输入【30】表示光标到第30行</p>
+</li>
+<li><p>输入【/关键词】+ 回车  可以从光标所在行往下开始查找该关键词（最后会从首行往下），继续输入n就是查找下一个</p>
+</li>
+</ul>
+<h3 id="3-3-2-一般模式下-正常模式"><a href="#3-3-2-一般模式下-正常模式" class="headerlink" title="3.3.2 一般模式下(正常模式)"></a>3.3.2 一般模式下(正常模式)</h3><ul>
+<li><p>按下【G】光标会直接移动到最后一行 </p>
+</li>
+<li><p>按下【yy】表示复制光标所在的一行，</p>
+</li>
+<li><p>按下【5yy】表示拷贝光标当前行向下的5行，</p>
+</li>
+<li><p>按下【p】**(小写的p)<strong>把剪贴板的内容粘贴到当前光标行的下一行(**大写的</strong>【P】会把内容粘贴到当前光标行的上一行)。</p>
+</li>
+<li><p>按下【dd】表示删除光标所在的那一行，按下【5dd】删除当前行向下的5行</p>
+</li>
+<li><p>按下【u】表示撤销上一次的操作</p>
+</li>
+</ul>
+<h2 id="3-4-Linux系统下文件和目录命令-也适用于Git中"><a href="#3-4-Linux系统下文件和目录命令-也适用于Git中" class="headerlink" title="3.4  Linux系统下文件和目录命令(也适用于Git中)"></a>3.4  Linux系统下文件和目录命令(也适用于Git中)</h2><ol>
+<li><p>输入【pwd】查看当前用户工作目录的绝对路径</p>
+</li>
+<li><p>【ls】查看当前目录下的文件</p>
+<ul>
+<li>【ls  -a】查看所有当前目录下的文件，包括普通文件，文件夹和隐藏的文件夹</li>
+<li>【.】代表当前目录。【..】代表上级目录</li>
+<li>【ls  -l】以详细列表的方式查看当前目录下的文件，缩写为【ll】，可在别的目录下通过输入【ll  文件夹的路径来临时查看该文件夹的信息</li>
+</ul>
+</li>
+<li><p>【cd】进入选定的文件夹目录</p>
+<ul>
+<li>【cd  ..】退回当前路径的上级目录</li>
+<li>【cd  ~】切换到当前用户的home目录</li>
+<li>【cd  /】切换到系统的根目录</li>
+<li>【cd  文件夹目录路径】进入到该文件夹目录，若没有这个目录，会给出相应的提示。</li>
+</ul>
+</li>
+<li><p>【mkdir】（make dir）创建目录（文件夹）</p>
+<ul>
+<li><p>【mkdir  music】在当前目录下创建子目录music</p>
+</li>
+<li><p>【mkdir  /root/movie】在root目录下创建目录movie</p>
+</li>
+<li><p>递归创建子目录(级联创建子目录)</p>
+<p>如：【mkdir  -p  /root/doc/day2】，在root下面，如果没有doc目录，则先创建doc目录，然后再在doc下创建day2目录</p>
+</li>
+</ul>
+</li>
+<li><p>【rmdir】（remove dir）删除目录</p>
+<ul>
+<li>【rmdir  day2】删除当前目录下的名为day2的子目录</li>
+<li>【rmdir  /root/doc/day2】通过指定绝对路径来删除day2文件夹</li>
+</ul>
+</li>
+<li><p>【touch】创建一个新的文件</p>
+<ul>
+<li>【touch  a】在当前目录下创建a文件，如果该文件存在，则会更新该文件的属性信息为最新的。</li>
+</ul>
+</li>
+<li><p>【cp】（copy） 复制文件</p>
+<ul>
+<li>【cp  a  b】把a文件复制在当前所在的文件夹，并且从重新命名为b。</li>
+<li>【\cp  day2/a  day3/a】强制用day2里的a文件覆盖掉day3里的a文件</li>
+</ul>
+</li>
+<li><p>【rm】删除文件</p>
+<ul>
+<li>【rm  a】删除当前目录下的文件</li>
+<li>【rm  /root/day1/a】使用绝对路径进行删除</li>
+<li>【rm -f  /root/day1/a】强制删除，不进行提醒</li>
+<li>【rm -r】递归删除文件及文件夹<ul>
+<li>【rm  -r  day2】把day2中的所有子文件夹和子文件删除，最后删除day2文件夹</li>
+</ul>
+</li>
+<li>【rm  -rf】删除文件或文件夹且<strong>不提示</strong><ul>
+<li>【rm  -rf  day2】直接删除day2文件夹</li>
+<li>【rm  -rf  b*】删除当前目录下的以b开头的文件和文件夹。</li>
+<li>【rm  -rf  /*】删库跑路 。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>【mv】移动文件或目录或重命名（只能在目标文件/文件夹的父目录下进行操作）</p>
+<ul>
+<li>【mv  a  b】将a文件改名为b</li>
+<li>【mv  day1/a.txt  day2/b.txt】把day1中的a.txt文件移动到day2中，顺便改名为b.txt。</li>
+<li>【mv  /root/day2  doc】把/root中的day2文件夹移动到doc中</li>
+<li>【mv  doc/day3  day3]把doc目录里的day3文件夹移动到当前doc所在的目录中。</li>
+</ul>
+</li>
+<li><p>【cat】查看文件内容</p>
+<ul>
+<li>【cat  b.txt】只查看b.txt的内容，不进行编辑</li>
+<li>【cat  -n  文件名】查看文件内容时，显示行号</li>
+<li>【cat  -n  b.txt  |  grep  tony】查看文件时，使用管道配合查找包含tony的信息并显示行号。</li>
+</ul>
+</li>
+<li><p>【echo】输出内容到控制台</p>
+<ul>
+<li>【echo  jq  &gt;  b.txt】把jq写入到b.txt 中，如果b.txt不存在，则自动创建b.txt，如果存在，则会覆盖里面的内容</li>
+<li>【echo  jq  &gt;&gt;  b.txt】往b.txt中增加jq的内容</li>
+</ul>
+</li>
+<li><p>【head】查看某文件的上部分内容（默认显示前10行）</p>
+<ul>
+<li>【head  b.txt】把b.txt中的前10行的内容出来</li>
+<li>【head  -n  3  b.txt】把b.txt中前3行的内容显示出来。</li>
+</ul>
+</li>
+<li><p>【tail】查看某文件的下部分内容（默认显示最后10行）</p>
+<ul>
+<li>【tail  b.txt】把b.txt中的最后10行的内容出来</li>
+<li>【tail  -n  3  b.txt】把b.txt中最后3行的内容显示出来。</li>
+</ul>
+</li>
+<li><p>创建文件的超链接</p>
+<ul>
+<li>【In  -s  /root/doc/jq.txt  JQ】在当前目录下创建一个指向/root/doc/jq.txt文件的超链接，链接名字叫做JQ。</li>
+</ul>
+</li>
+</ol>
+<h2 id="3-5Linux系统用户-用户组-压缩的命令"><a href="#3-5Linux系统用户-用户组-压缩的命令" class="headerlink" title="3.5Linux系统用户/用户组/压缩的命令"></a>3.5Linux系统用户/用户组/压缩的命令</h2><h3 id="3-5-1关机-amp-重启命令"><a href="#3-5-1关机-amp-重启命令" class="headerlink" title="3.5.1关机&amp;重启命令"></a>3.5.1关机&amp;重启命令</h3><ul>
+<li>【shutdown  now】 立即关机</li>
+<li>【poweroff 】 立即关机</li>
+<li>【shutdown  -h  1 】”hello 一分钟后会关机”</li>
+<li>【shutdown  -r  now 现在重启启动计算机</li>
+<li>【reboot 】现在重新启动计算机</li>
+</ul>
+<h3 id="3-5-2-用户的登录和注销"><a href="#3-5-2-用户的登录和注销" class="headerlink" title="3.5.2 用户的登录和注销"></a>3.5.2 用户的登录和注销</h3><ul>
+<li>系统切换用户登录，可以使用【su  -  用户名】，即可切换到该用户（ 高权限用户，切换到低权限用户，不需要输入低权限用户的密码；低权限用户，切换到高权限用户时，需要输入高权限用户的密码。 ）</li>
+<li>使用【 logout】 注销当前登录用户 </li>
+</ul>
+<h3 id="3-5-3用户管理"><a href="#3-5-3用户管理" class="headerlink" title="3.5.3用户管理"></a>3.5.3用户管理</h3><ul>
+<li><p>【useradd tom】 添加用户tom，添加后系统会为该用户添加一个工作目录，其工作在/home目录下的/tom目录。</p>
+</li>
+<li><p>【passwd  tom】   给tom用户添加密码（在root目录下操作）</p>
+</li>
+<li><p>【 id  tom】查看tom用户信息 </p>
+</li>
+<li><p>【who  am  I/i】查看当前登陆系统的用户信息，</p>
+</li>
+<li><p>【whoami】查看当前操作的用户名</p>
+</li>
+<li><p>【exit】退回到切换前的用户</p>
+</li>
+<li><p>【userdel  tom】删除当前用户信息</p>
+<p>【userdel  -f  tom】强制删除tom用户，但是其文件夹还存在</p>
+<p>【userdel  -rf  tom】删除tom用户和他的工作目录</p>
+</li>
+<li><p>【usermod  –help】查看所有关于usermod的所有指令</p>
+</li>
+</ul>
+<h3 id="3-5-4用户组管理"><a href="#3-5-4用户组管理" class="headerlink" title="3.5.4用户组管理"></a>3.5.4用户组管理</h3><ul>
+<li>【groupadd  developer】增加开发组(用户组)</li>
+<li>【groupdel  developer】删除开发组（用户组）</li>
+<li>【 useradd  -g  developer  tony 】添加tony用户的同时给tony添加进用户组developer</li>
+<li>【usermod  -g  jq  tony】将tony用户从开发组developer移动到开发组jq中</li>
+<li>【 cat  /etc/passwd 】查看用户信息文件内容</li>
+<li>【cat  /etc/group】查看用户组</li>
+<li>【source  /etc/group】刷新该目录</li>
+</ul>
+<h3 id="3-5-5压缩和解压缩"><a href="#3-5-5压缩和解压缩" class="headerlink" title="3.5.5压缩和解压缩"></a>3.5.5压缩和解压缩</h3><ul>
+<li><p>gzip/gunzip，进行单个的压缩和解压</p>
+<ul>
+<li>【gzip  a.txt】将a.txt文件压缩，压缩后变为a.txt.gz，原来的a.txt会消失</li>
+<li>【gunzip  a.txt】将a.txt的压缩包a.txt.gz解压为a.txt，原文件会消失。</li>
+</ul>
+</li>
+<li><p>zip/unzip  可批量压缩和解压</p>
+<ul>
+<li>【zip  a.zip  a1.txt  a2.txt】将a1.txt  a2.txt文件压缩，并将压缩包命名为a.zip。</li>
+<li>【zip  -r  doc.zip  /root/doc】将root下的doc文件夹打包压缩到当前的root目录下</li>
+<li>【zip  b.zip  b*】打包所有以b开头的文件和文件夹并命名为b.zip。</li>
+<li>【unzip a.zip】将a.zip解压缩到当前目录下，会提示是否覆盖</li>
+<li>【unzip -d temp a.zip】用相对路径将a.zip解压到当前目录下的temp文件夹，若没有temp文件夹则会创建一个。</li>
+<li>【unzip -d /home/king a.zip】用绝对路径将a.zip解压到指定的目录中。若没有该目录则将创建一个。</li>
+</ul>
+</li>
+<li><p>【tar】指令</p>
+<ul>
+<li>基本语法：tar  [选项]  xxx.tar.gz  打包的内容，直接解压会解压到当前操作目录下，会自动替换同名文件</li>
+<li>选项说明：<ul>
+<li>-c  打包</li>
+<li>-x  解包</li>
+<li>-v  显示打包的详细过程 </li>
+<li>-f   指定tar包的文件名</li>
+<li>-z  将打包的文件再进行压缩</li>
+</ul>
+</li>
+<li>【tar  -xvf  bak.tar  -C  /home/king/bak】将bak.tar压缩包解压到指定目录(若没有，不会自动创建该目录)</li>
+<li>【tar  -cvf  bak.tar  *】把当前工作目录中所有的文件、文件夹打包成bak.tar文件 。</li>
+<li>【tar  -zcvf  bak.tar.gz  *】把当前工作目录下的所有文件，文件夹打包并压缩成  bak.tar.gz压缩包。</li>
+<li>【tar  -zxvf  bak.tar.gz  -C  temp】将 bak.tar.gz解压到指定的temp目录。</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-6文件权限"><a href="#3-6文件权限" class="headerlink" title="3.6文件权限"></a>3.6文件权限</h3><ul>
+<li>（<a target="_blank" rel="noopener" href="https://blog.csdn.net/dshf_1/article/details/99973236**%E8%A7%A3%E9%87%8A**%EF%BC%89">https://blog.csdn.net/dshf_1/article/details/99973236**解释**）</a></li>
+<li>当前普通用户创建的文件，只有它自己拥有读写的权限，其他普通用户只有读的权限，root拥有对所有文件，文件夹的所有操作权限</li>
+</ul>
+<ul>
+<li><p>【chown  用户名  文件名】文件所有者修改</p>
+<ul>
+<li>【chown  king  a.txt】超级用户root将对a.txt文件的所有者更为为普通用户king</li>
+</ul>
+</li>
+<li><p>【chgrp  组名  文件名】修改文件所在组</p>
+<ul>
+<li>【chgrp  temp  a.txt】超级用户root将所在自己组的a.txt的权限转去temp组。</li>
+</ul>
+</li>
+<li><p>【chmod】给一个文件修改权限</p>
+<ul>
+<li><p>【u】表示所有者，【g】表示所在组，【o】表示其他人，【a】表示所有人,【<a target="_blank" rel="noopener" href="https://blog.csdn.net/coolcoffee168/article/details/89373902%E3%80%91">https://blog.csdn.net/coolcoffee168/article/details/89373902】</a></p>
+</li>
+<li><p>【r】(可读)，表示可以读取目录的内容, 如ls<strong>查看</strong>目录内容。 </p>
+</li>
+<li><p>【w】 (可写)，表示目录内可以创建、删除文件或目录</p>
+</li>
+<li><p>【x】 (执行)用于文件夹上，表示该文件夹是否可以被进入</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>【chmod  u=rw,g=rwx,o=r  a.txt】所有者有rw，所在组有rwx，其他人有r权限。</p>
+</li>
+<li><p>【chmod  ug+rw  a.txt】给a.txt文件设为文件所有者，文件所在组都可读可写</p>
+</li>
+<li><p>【chmod  ugo+rw  a.txt】给a.txt文件设为所有人都可进行读写操作</p>
+</li>
+<li><p>【chmod  777  a.txt】给user  ，group，other分别授权读写和执行权限。4代表读，2代表写，1代表执行。4+2+1=7</p>
+</li>
+<li><p>【chmod  ug-w  a.txt】减号代表取消权限，取消user，group对文件a.txt的写权限。</p>
+</li>
+<li><p>【 chmod -R 774 /home/hou3】-R作用： 对目前目录下的所有文件与子目录进行相同的权限变更(即以递回的方式逐个变更) </p>
+</li>
+</ul>
 
       
     </div>
